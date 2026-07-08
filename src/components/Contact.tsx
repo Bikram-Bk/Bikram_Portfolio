@@ -57,7 +57,9 @@ export const Contact: React.FC = () => {
 
     const templateParams = {
       from_name: formData.name,
+      name: formData.name,
       from_email: formData.email,
+      email: formData.email,
       subject: formData.subject,
       message: formData.message,
     };
@@ -74,14 +76,30 @@ export const Contact: React.FC = () => {
         setFormData({ name: "", email: "", subject: "", message: "" });
       })
       .catch((err) => {
+        const detail = err?.text || err?.message || JSON.stringify(err);
         console.error("EmailJS Error:", err);
         setSubmitError(
-          "Failed to send the message. Please try again later or email directly.",
+          `Failed to send: ${detail}. Please try again or contact directly via email.`,
         );
       })
       .finally(() => {
         setIsSubmitting(false);
       });
+  };
+
+  // Opens Gmail app on mobile, Gmail web compose on desktop
+  const handleDirectEmail = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) {
+      window.location.href = `mailto:${PROFILE_INFO.email}`;
+    } else {
+      window.open(
+        `https://mail.google.com/mail/?view=cm&fs=1&to=${PROFILE_INFO.email}`,
+        "_blank",
+        "noopener,noreferrer",
+      );
+    }
   };
 
   return (
@@ -151,9 +169,8 @@ export const Contact: React.FC = () => {
                     Direct Email
                   </p>
                   <a
-                    href={`https://mail.google.com/mail/?view=cm&fs=1&to=${PROFILE_INFO.email}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={`mailto:${PROFILE_INFO.email}`}
+                    onClick={handleDirectEmail}
                     className="text-xs font-semibold text-neutral-700 hover:text-neutral-950 dark:text-neutral-300 dark:hover:text-white underline decoration-neutral-950/20 hover:decoration-neutral-950 dark:decoration-white/20 dark:hover:decoration-white"
                   >
                     {PROFILE_INFO.email}
@@ -252,11 +269,10 @@ export const Contact: React.FC = () => {
                           name="name"
                           value={formData.name}
                           onChange={handleChange}
-                          className={`w-full rounded-lg border px-3 py-2 text-xs bg-white text-gray-950 focus:outline-none focus:ring-1 transition-all dark:bg-neutral-950 dark:text-white ${
-                            errors.name
-                              ? "border-red-400 focus:border-red-500 focus:ring-red-400/25"
-                              : "border-neutral-900/10 focus:border-neutral-950 focus:ring-neutral-950/15 dark:border-white/10 dark:focus:border-white"
-                          }`}
+                          className={`w-full rounded-lg border px-3 py-2 text-xs bg-white text-gray-950 focus:outline-none focus:ring-1 transition-all dark:bg-neutral-950 dark:text-white ${errors.name
+                            ? "border-red-400 focus:border-red-500 focus:ring-red-400/25"
+                            : "border-neutral-900/10 focus:border-neutral-950 focus:ring-neutral-950/15 dark:border-white/10 dark:focus:border-white"
+                            }`}
                           placeholder="e.g. Alex"
                         />
                         {errors.name && (
@@ -277,11 +293,10 @@ export const Contact: React.FC = () => {
                           name="email"
                           value={formData.email}
                           onChange={handleChange}
-                          className={`w-full rounded-lg border px-3 py-2 text-xs bg-white text-gray-950 focus:outline-none focus:ring-1 transition-all dark:bg-neutral-950 dark:text-white ${
-                            errors.email
-                              ? "border-red-400 focus:border-red-500 focus:ring-red-400/25"
-                              : "border-neutral-900/10 focus:border-neutral-950 focus:ring-neutral-950/15 dark:border-white/10 dark:focus:border-white"
-                          }`}
+                          className={`w-full rounded-lg border px-3 py-2 text-xs bg-white text-gray-950 focus:outline-none focus:ring-1 transition-all dark:bg-neutral-950 dark:text-white ${errors.email
+                            ? "border-red-400 focus:border-red-500 focus:ring-red-400/25"
+                            : "border-neutral-900/10 focus:border-neutral-950 focus:ring-neutral-950/15 dark:border-white/10 dark:focus:border-white"
+                            }`}
                           placeholder="e.g. you@domain.com"
                         />
                         {errors.email && (
@@ -303,11 +318,10 @@ export const Contact: React.FC = () => {
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
-                        className={`w-full rounded-lg border px-3 py-2 text-xs bg-white text-gray-950 focus:outline-none focus:ring-1 transition-all dark:bg-neutral-950 dark:text-white ${
-                          errors.subject
-                            ? "border-red-400 focus:border-red-500 focus:ring-red-400/25"
-                            : "border-neutral-900/10 focus:border-neutral-950 focus:ring-neutral-950/15 dark:border-white/10 dark:focus:border-white"
-                        }`}
+                        className={`w-full rounded-lg border px-3 py-2 text-xs bg-white text-gray-950 focus:outline-none focus:ring-1 transition-all dark:bg-neutral-950 dark:text-white ${errors.subject
+                          ? "border-red-400 focus:border-red-500 focus:ring-red-400/25"
+                          : "border-neutral-900/10 focus:border-neutral-950 focus:ring-neutral-950/15 dark:border-white/10 dark:focus:border-white"
+                          }`}
                         placeholder="e.g. Hiring / Project request"
                       />
                       {errors.subject && (
@@ -328,11 +342,10 @@ export const Contact: React.FC = () => {
                         value={formData.message}
                         onChange={handleChange}
                         rows={5}
-                        className={`w-full rounded-lg border px-3 py-2 text-xs bg-white text-gray-950 focus:outline-none focus:ring-1 transition-all dark:bg-neutral-950 dark:text-white resize-none ${
-                          errors.message
-                            ? "border-red-400 focus:border-red-500 focus:ring-red-400/25"
-                            : "border-neutral-900/10 focus:border-neutral-950 focus:ring-neutral-950/15 dark:border-white/10 dark:focus:border-white"
-                        }`}
+                        className={`w-full rounded-lg border px-3 py-2 text-xs bg-white text-gray-950 focus:outline-none focus:ring-1 transition-all dark:bg-neutral-950 dark:text-white resize-none ${errors.message
+                          ? "border-red-400 focus:border-red-500 focus:ring-red-400/25"
+                          : "border-neutral-900/10 focus:border-neutral-950 focus:ring-neutral-950/15 dark:border-white/10 dark:focus:border-white"
+                          }`}
                         placeholder="Write down details here..."
                       />
                       {errors.message && (
