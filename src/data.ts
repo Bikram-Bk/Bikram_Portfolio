@@ -1,13 +1,22 @@
-import { Project, TimelineItem, Skill } from './types';
+import { Project, TimelineItem, Skill } from "./types";
 
-export const AVATAR_PATH = '/src/assets/images/portfolio_image.jpg';
+import portfolioImage from "./assets/images/portfolio_image.jpg";
+import developerTools from "./assets/images/developer_tools.png";
+import evently from "./assets/images/Evently.png";
+import faceMaskDetection from "./assets/images/Face_Mask_Detection.png";
+import githubReadmeDesigner from "./assets/images/Github_Readme_Designer.png";
+import jsonPackageAnalyzer from "./assets/images/JSON_Package_Analyzer.png";
+import textGenerationUsingLSTM from "./assets/images/Text_Generation_Using_LSTM.png";
+
+export const AVATAR_PATH = portfolioImage;
 
 export const PROFILE_INFO = {
   name: "Bikram Luhar",
   role: "Frontend Developer | Full Stack Enthusiast",
   location: "Kathmandu, Nepal",
   availability: "Available for Roles & Freelance",
-  shortIntro: "Crafting visually striking, accessible, and high-performance digital experiences. Specializing in modern React architecture with a passion for creative interactive UI and full-stack integration.",
+  shortIntro:
+    "Crafting visually striking, accessible, and high-performance digital experiences. Specializing in modern React architecture with a passion for creative interactive UI and full-stack integration.",
   email: "bikrambk2244@gmail.com",
   github: "https://github.com/Bikram-Bk",
   linkedin: "https://www.linkedin.com/in/bikram-luhar-30048b361/",
@@ -28,14 +37,34 @@ export const SKILLS: Skill[] = [
   { name: "TypeScript", category: "frontend", level: "Advanced", icon: "Ts" },
   { name: "React", category: "frontend", level: "Expert", icon: "React" },
   { name: "Next.js", category: "frontend", level: "Advanced", icon: "Next" },
-  { name: "Tailwind CSS", category: "frontend", level: "Expert", icon: "Tailwind" },
+  {
+    name: "Tailwind CSS",
+    category: "frontend",
+    level: "Expert",
+    icon: "Tailwind",
+  },
   { name: "shadcn/ui", category: "frontend", level: "Expert", icon: "Shadcn" },
-  { name: "Hono", category: "backend", level: "Foundational Knowledge", icon: "Hono" },
+  {
+    name: "Hono",
+    category: "backend",
+    level: "Foundational Knowledge",
+    icon: "Hono",
+  },
   { name: "Expo", category: "frontend", level: "Advanced", icon: "Expo" },
 
   // Database (Working Knowledge)
-  { name: "PostgreSQL", category: "database", level: "Working Knowledge", icon: "Postgres" },
-  { name: "Prisma ORM", category: "database", level: "Working Knowledge", icon: "Prisma" },
+  {
+    name: "PostgreSQL",
+    category: "database",
+    level: "Working Knowledge",
+    icon: "Postgres",
+  },
+  {
+    name: "Prisma ORM",
+    category: "database",
+    level: "Working Knowledge",
+    icon: "Prisma",
+  },
 
   // Tools
   { name: "Git", category: "tools", level: "Advanced", icon: "Git" },
@@ -61,7 +90,7 @@ export const TIMELINE: TimelineItem[] = [
       "Developed responsive UI components using React.js and Tailwind CSS.",
       "Integrated REST APIs using Swagger documentation for seamless data flow.",
       "Collaborated with backend developers to connect frontend features with APIs.",
-      "Fixed UI bugs, improved application responsiveness, and enhanced overall user experience."
+      "Fixed UI bugs, improved application responsiveness, and enhanced overall user experience.",
     ],
     tech: [
       "React.js",
@@ -69,8 +98,8 @@ export const TIMELINE: TimelineItem[] = [
       "JavaScript",
       "REST APIs",
       "Swagger",
-      "Git"
-    ]
+      "Git",
+    ],
   },
   {
     id: "t2",
@@ -84,7 +113,7 @@ export const TIMELINE: TimelineItem[] = [
       "Built the mobile application using React Native with Expo.",
       "Developed backend APIs using Hono and Node.js.",
       "Designed and managed PostgreSQL database with Prisma ORM.",
-      "Implemented JWT authentication, event management features, and interactive maps."
+      "Implemented JWT authentication, event management features, and interactive maps.",
     ],
     tech: [
       "React Native",
@@ -93,8 +122,8 @@ export const TIMELINE: TimelineItem[] = [
       "Node.js",
       "PostgreSQL",
       "Prisma",
-      "JWT"
-    ]
+      "JWT",
+    ],
   },
   {
     id: "t3",
@@ -107,14 +136,9 @@ export const TIMELINE: TimelineItem[] = [
     points: [
       "Learned TypeScript for writing safer and more maintainable code.",
       "Built reusable components using shadcn/ui and Tailwind CSS.",
-      "Improved understanding of accessibility and responsive design principles."
+      "Improved understanding of accessibility and responsive design principles.",
     ],
-    tech: [
-      "TypeScript",
-      "Tailwind CSS",
-      "shadcn/ui",
-      "Accessibility"
-    ]
+    tech: ["TypeScript", "Tailwind CSS", "shadcn/ui", "Accessibility"],
   },
   {
     id: "t4",
@@ -124,11 +148,7 @@ export const TIMELINE: TimelineItem[] = [
     duration: "Late 2024",
     description:
       "Learned component-based development, React Hooks, state management, and modern JavaScript fundamentals.",
-    tech: [
-      "React",
-      "JavaScript (ES6+)",
-      "CSS3"
-    ]
+    tech: ["React", "JavaScript (ES6+)", "CSS3"],
   },
   {
     id: "t5",
@@ -138,21 +158,19 @@ export const TIMELINE: TimelineItem[] = [
     duration: "Early 2024",
     description:
       "Began exploring web development by learning the core technologies used to build modern websites.",
-    tech: [
-      "HTML5",
-      "CSS3",
-      "JavaScript"
-    ]
-  }
+    tech: ["HTML5", "CSS3", "JavaScript"],
+  },
 ];
 
 export const PROJECTS: Project[] = [
   {
     id: "p1",
     title: "Developer Toolbox",
-    description: "A polished collection of browser-based developer utilities for formatting, encoding, hashing, and transforming data through a unified interface.",
-    longDescription: "A modern client-side toolkit built with Next.js that simplifies everyday development tasks. It includes JSON formatting, JWT decoding, Base64 encoding, URL utilities, Regex testing, UUID generation, hashing tools, and a searchable dashboard designed for developer productivity.",
-    image: "/src/assets/images/developer_tools.png",
+    description:
+      "A polished collection of browser-based developer utilities for formatting, encoding, hashing, and transforming data through a unified interface.",
+    longDescription:
+      "A modern client-side toolkit built with Next.js that simplifies everyday development tasks. It includes JSON formatting, JWT decoding, Base64 encoding, URL utilities, Regex testing, UUID generation, hashing tools, and a searchable dashboard designed for developer productivity.",
+    image: developerTools,
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui"],
     category: "frontend",
     githubUrl: "https://github.com/Bikram-Bk/Developer-Tools",
@@ -163,15 +181,17 @@ export const PROJECTS: Project[] = [
       "Hashing, Base64 and URL encoding tools",
       "Privacy-focused client-side processing",
       "Searchable developer dashboard",
-      "Responsive interface with theme support"
-    ]
+      "Responsive interface with theme support",
+    ],
   },
   {
     id: "p2",
     title: "JSON Package Analyzer",
-    description: "A modern developer utility for analyzing package.json files with dependency insights, project metadata, and interactive statistics.",
-    longDescription: "A browser-based application that helps developers inspect package.json files through an intuitive interface. It parses dependencies, scripts, metadata, and version statistics locally, ensuring privacy while providing fast and accurate project analysis.",
-    image: "/src/assets/images/JSON_Package_Analyzer.png",
+    description:
+      "A modern developer utility for analyzing package.json files with dependency insights, project metadata, and interactive statistics.",
+    longDescription:
+      "A browser-based application that helps developers inspect package.json files through an intuitive interface. It parses dependencies, scripts, metadata, and version statistics locally, ensuring privacy while providing fast and accurate project analysis.",
+    image: jsonPackageAnalyzer,
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     category: "frontend",
     githubUrl: "https://github.com/Bikram-Bk/JSON-Package-Analyzer",
@@ -182,15 +202,17 @@ export const PROJECTS: Project[] = [
       "Dependency and script analysis",
       "Project metadata and version insights",
       "JSON export and copy functionality",
-      "Responsive developer-friendly interface"
-    ]
+      "Responsive developer-friendly interface",
+    ],
   },
   {
     id: "p3",
     title: "GitHub README Designer",
-    description: "An interactive README generator that enables developers to build professional GitHub documentation with live Markdown preview.",
-    longDescription: "A modern documentation builder developed with Next.js that guides users through creating polished GitHub README files. It offers editable Markdown output, live preview, responsive layouts, and customizable project sections for streamlined documentation.",
-    image: "/src/assets/images/Github_Readme_Designer.png",
+    description:
+      "An interactive README generator that enables developers to build professional GitHub documentation with live Markdown preview.",
+    longDescription:
+      "A modern documentation builder developed with Next.js that guides users through creating polished GitHub README files. It offers editable Markdown output, live preview, responsive layouts, and customizable project sections for streamlined documentation.",
+    image: githubReadmeDesigner,
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "React Markdown"],
     category: "frontend",
     githubUrl: "https://github.com/Bikram-Bk/Github-README-Designer",
@@ -201,16 +223,24 @@ export const PROJECTS: Project[] = [
       "Real-time Markdown preview",
       "Editable documentation before export",
       "Support for badges, scripts and documentation",
-      "Dark and light theme support"
-    ]
+      "Dark and light theme support",
+    ],
   },
   {
     id: "p4",
     title: "Evently",
-    description: "A production-ready cross-platform event management application for discovering, planning, and organizing cultural events with a seamless mobile experience.",
-    longDescription: "A full-stack mobile application built using React Native and Expo that streamlines event planning through secure authentication, planner dashboards, advanced event filtering, interactive chat, favorites, notifications, and reusable UI components.",
-    image: "/src/assets/images/Evently.png",
-    tags: ["React Native", "Expo", "TypeScript", "Expo Router", "TanStack Query"],
+    description:
+      "A production-ready cross-platform event management application for discovering, planning, and organizing cultural events with a seamless mobile experience.",
+    longDescription:
+      "A full-stack mobile application built using React Native and Expo that streamlines event planning through secure authentication, planner dashboards, advanced event filtering, interactive chat, favorites, notifications, and reusable UI components.",
+    image: evently,
+    tags: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Expo Router",
+      "TanStack Query",
+    ],
     category: "mobile",
     githubUrl: "https://github.com/Bikram-Bk/Evently_App_Frontend",
     liveUrl: "",
@@ -220,15 +250,17 @@ export const PROJECTS: Project[] = [
       "Secure authentication and planner dashboard",
       "Advanced event search and filtering",
       "Interactive chatbot and notifications",
-      "Reusable UI components with dark mode support"
-    ]
+      "Reusable UI components with dark mode support",
+    ],
   },
   {
     id: "p5",
     title: "Face Mask Detection Using SSD",
-    description: "A computer vision project that detects masked and unmasked faces using the Single Shot Detector (SSD) deep learning model.",
-    longDescription: "A deep learning application built with Python and OpenCV that leverages a pretrained SSD model for real-time face detection and mask classification. The project demonstrates image preprocessing, object detection, and computer vision workflows.",
-    image: "/src/assets/images/Face_Mask_Detection.png",
+    description:
+      "A computer vision project that detects masked and unmasked faces using the Single Shot Detector (SSD) deep learning model.",
+    longDescription:
+      "A deep learning application built with Python and OpenCV that leverages a pretrained SSD model for real-time face detection and mask classification. The project demonstrates image preprocessing, object detection, and computer vision workflows.",
+    image: faceMaskDetection,
     tags: ["Python", "OpenCV", "SSD", "Deep Learning", "Computer Vision"],
     category: "ai-ml",
     githubUrl: "https://github.com/Bikram-Bk/Face-Mask-Detection-Using-SSD",
@@ -239,15 +271,17 @@ export const PROJECTS: Project[] = [
       "Mask and non-mask classification",
       "OpenCV image processing pipeline",
       "Deep learning inference",
-      "Real-time detection support"
-    ]
+      "Real-time detection support",
+    ],
   },
   {
     id: "p6",
     title: "Text Generation Using LSTM",
-    description: "A natural language processing project that generates coherent text sequences using Long Short-Term Memory neural networks.",
-    longDescription: "An NLP application that trains an LSTM model on textual datasets to learn language patterns and generate context-aware text. It demonstrates text preprocessing, sequence modeling, neural network training, and text generation.",
-    image: "/src/assets/images/Text_Generation_Using_LSTM.png",
+    description:
+      "A natural language processing project that generates coherent text sequences using Long Short-Term Memory neural networks.",
+    longDescription:
+      "An NLP application that trains an LSTM model on textual datasets to learn language patterns and generate context-aware text. It demonstrates text preprocessing, sequence modeling, neural network training, and text generation.",
+    image: textGenerationUsingLSTM,
     tags: ["Python", "TensorFlow", "Keras", "LSTM", "NLP"],
     category: "ai-ml",
     githubUrl: "https://github.com/Bikram-Bk/Text-Generation-Using-LSTM",
@@ -258,9 +292,9 @@ export const PROJECTS: Project[] = [
       "LSTM-based sequence modeling",
       "Neural network training",
       "Context-aware text generation",
-      "Natural language processing workflow"
-    ]
-  }
+      "Natural language processing workflow",
+    ],
+  },
 ];
 
 // export const CERTIFICATIONS: Certification[] = [
