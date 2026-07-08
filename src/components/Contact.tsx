@@ -3,6 +3,7 @@ import emailjs from "@emailjs/browser";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Mail, MapPin, Send, CheckCircle2, AlertCircle } from "lucide-react";
+import { openEmail } from "../utils/openEmail";
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -87,21 +88,6 @@ export const Contact: React.FC = () => {
       });
   };
 
-  // Opens Gmail app on mobile, Gmail web compose on desktop
-  const handleDirectEmail = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    if (isMobile) {
-      window.location.href = `mailto:${PROFILE_INFO.email}`;
-    } else {
-      window.open(
-        `https://mail.google.com/mail/?view=cm&fs=1&to=${PROFILE_INFO.email}`,
-        "_blank",
-        "noopener,noreferrer",
-      );
-    }
-  };
-
   return (
     <section
       id="contact"
@@ -170,7 +156,7 @@ export const Contact: React.FC = () => {
                   </p>
                   <a
                     href={`mailto:${PROFILE_INFO.email}`}
-                    onClick={handleDirectEmail}
+                    onClick={(e) => { e.preventDefault(); openEmail(PROFILE_INFO.email); }}
                     className="text-xs font-semibold text-neutral-700 hover:text-neutral-950 dark:text-neutral-300 dark:hover:text-white underline decoration-neutral-950/20 hover:decoration-neutral-950 dark:decoration-white/20 dark:hover:decoration-white"
                   >
                     {PROFILE_INFO.email}

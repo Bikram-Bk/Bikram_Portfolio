@@ -2,6 +2,7 @@ import { PROFILE_INFO, AVATAR_PATH } from "../data";
 import React, { useState, useEffect, useRef } from "react";
 import { ArrowDownRight, ArrowDown, MapPin, Mail } from "lucide-react";
 import { motion, useScroll, useTransform, useSpring } from "motion/react";
+import { openEmail } from "../utils/openEmail";
 
 export const Hero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -272,9 +273,8 @@ export const Hero: React.FC = () => {
                   </svg>
                 </a>
                 <a
-                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${PROFILE_INFO.email}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`mailto:${PROFILE_INFO.email}`}
+                  onClick={(e) => { e.preventDefault(); openEmail(PROFILE_INFO.email); }}
                   className="text-neutral-500 hover:text-neutral-950 dark:hover:text-white transition-colors duration-200"
                   aria-label="Email Direct"
                 >

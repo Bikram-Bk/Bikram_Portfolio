@@ -1,6 +1,7 @@
 import React from 'react';
 import { Mail } from 'lucide-react';
 import { PROFILE_INFO } from '../data';
+import { openEmail } from '../utils/openEmail';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -50,9 +51,8 @@ export const Footer: React.FC = () => {
               </svg>
             </a>
             <a
-              href={`https://mail.google.com/mail/?view=cm&fs=1&to=${PROFILE_INFO.email}`}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`mailto:${PROFILE_INFO.email}`}
+              onClick={(e) => { e.preventDefault(); openEmail(PROFILE_INFO.email); }}
               className="text-gray-400 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
               title="Email Direct"
             >
