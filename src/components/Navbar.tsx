@@ -146,7 +146,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
 
             {/* Download CV button */}
             <motion.a
-              href="/Resume_Bikram_Luhar.pdf"
+              href="/Bikram_Luhar_Resume.pdf"
               download="Bikram_Luhar.pdf"
               whileHover={{ scale: 1.02, y: -1 }}
               whileTap={{ scale: 0.98 }}
