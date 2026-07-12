@@ -228,8 +228,8 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
 
                 <div className="pt-6">
                   <a
-                    href="/resume.pdf"
-                    download="Alex_Rivera_Resume.pdf"
+                    href="/Bikram_Luhar_Resume.pdf"
+                    download="Bikram_Luhar.pdf"
                     className="flex w-full items-center justify-center space-x-2 rounded-lg bg-gray-900 py-3 text-sm font-semibold text-white dark:bg-white dark:text-gray-950"
                   >
                     <Download className="h-4 w-4" />

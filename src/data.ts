@@ -19,7 +19,7 @@ export const PROFILE_INFO = {
     "Crafting visually striking, accessible, and high-performance digital experiences. Specializing in modern React architecture with a passion for creative interactive UI and full-stack integration.",
   email: "bikrambk2244@gmail.com",
   github: "https://github.com/Bikram-Bk",
-  linkedin: "https://www.linkedin.com/in/bikram-luhar-30048b361/",
+  linkedin: "https://www.linkedin.com/in/bikramluhar/",
 };
 
 export const STATISTICS = [
