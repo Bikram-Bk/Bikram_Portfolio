@@ -67,7 +67,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
         transition={{ duration: 0.3 }}
         className="fixed top-0 left-0 right-0 z-50 h-16 border-b border-gray-200/40 bg-white/70 backdrop-blur-md transition-colors duration-300 dark:border-gray-800/40 dark:bg-gray-950/70"
       >
-        <div className="mx-auto flex h-full max-w-345 items-center justify-between px-6 sm:px-8 lg:px-8 xl:px-12">
+        <div className="w-full flex h-full items-center justify-between px-5 sm:px-8 lg:px-12 xl:px-16 2xl:px-24">
           {/* Logo */}
           <div className="flex items-center">
             <button

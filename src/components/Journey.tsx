@@ -6,7 +6,7 @@ import { Briefcase, BookOpen, ChevronRight } from 'lucide-react';
 export const Journey: React.FC = () => {
   return (
     <section id="journey" className="py-14 bg-white dark:bg-neutral-950 transition-colors duration-500">
-      <div className="container mx-auto max-w-345 px-6 sm:px-8 lg:px-8 xl:px-12">
+      <div className="w-full px-5 sm:px-8 lg:px-12 xl:px-16 2xl:px-24">
 
         {/* Section Header */}
         <div className="text-center">
@@ -62,8 +62,8 @@ export const Journey: React.FC = () => {
                 >
                   {/* Icon Node Dot */}
                   <div className={`absolute left-0 top-1 md:top-4 z-10 flex h-8 w-8 items-center justify-center rounded-full border shadow-sm transition-colors ${isEven
-                      ? 'md:left-0 md:-translate-x-1/2'
-                      : 'md:left-auto md:right-0 md:translate-x-1/2'
+                    ? 'md:left-0 md:-translate-x-1/2'
+                    : 'md:left-auto md:right-0 md:translate-x-1/2'
                     } ${isInternship
                       ? 'border-[#e75b37]/30 bg-[#e75b37]/10 text-[#e75b37] dark:border-[#e75b37]/50 dark:bg-[#e75b37]/20 dark:text-[#f06e4d]'
                       : 'border-neutral-900/10 bg-white/60 text-neutral-500 dark:border-white/5 dark:bg-neutral-900/60 dark:text-neutral-400'

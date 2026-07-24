@@ -112,7 +112,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Content Container */}
-        <div className="container relative z-10 mx-auto max-w-345 px-6 sm:px-8 lg:px-8 xl:px-12 flex h-full items-center">
+        <div className="w-full relative z-10 px-5 sm:px-8 lg:px-12 xl:px-16 2xl:px-24 flex h-full items-center">
           <div className="grid grid-cols-1 md:grid-cols-12 w-full gap-8 md:gap-12 items-center">
             {/* Left Column (Content) */}
             <motion.div

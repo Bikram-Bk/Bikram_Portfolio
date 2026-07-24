@@ -93,7 +93,7 @@ export const Contact: React.FC = () => {
       id="contact"
       className="py-14 bg-white dark:bg-neutral-950 transition-colors duration-500"
     >
-      <div className="container mx-auto max-w-345 px-6 sm:px-8 lg:px-8 xl:px-12">
+      <div className="w-full px-5 sm:px-8 lg:px-12 xl:px-16 2xl:px-24">
         {/* Section Header */}
         <div className="text-center">
           <motion.p
